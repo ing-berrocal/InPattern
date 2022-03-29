@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.proyecto.inpatterns.chainresponsaibility;
+package com.proyecto.inpatterns.observable;
+
+import java.util.Observable;
 
 /**
  *
  * @author DELL
  */
-public enum FoodTypeEnum {
-    ASIAN,CHINNESE,GREEK,INDIAN,ITALIAN,MEXICAN,MEDITERRANEO;
+public class StudentDashboard extends Observable{
+    
 }

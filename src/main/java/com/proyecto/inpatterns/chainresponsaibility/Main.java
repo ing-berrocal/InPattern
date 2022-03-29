@@ -23,9 +23,9 @@ public class Main {
         greek.setNextRequestHandler(indian);
         indian.setNextRequestHandler(italian);
         italian.setNextRequestHandler(mexican);
-        mexican.setNextRequestHandler(asian);
+        //mexican.setNextRequestHandler(asian);
         
         
-        chinnese.processRequestHandler(FoodTypeEnum.ASIAN);
+        chinnese.processRequestHandler(FoodTypeEnum.MEDITERRANEO);
     }
 }

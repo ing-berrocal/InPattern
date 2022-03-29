@@ -3,12 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.proyecto.inpatterns.chainresponsaibility;
+package com.proyecto.inpatterns.command;
 
 /**
  *
  * @author DELL
  */
-public enum FoodTypeEnum {
-    ASIAN,CHINNESE,GREEK,INDIAN,ITALIAN,MEXICAN,MEDITERRANEO;
+public class TextOperation {
+    public void open(){
+        System.out.println("Open");
+    }
+    
+    public void close(){
+        System.out.println("Close");
+    }
 }

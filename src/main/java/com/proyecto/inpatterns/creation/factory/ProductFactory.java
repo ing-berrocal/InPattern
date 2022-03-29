@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.proyecto.inpatterns.chainresponsaibility;
+package com.proyecto.inpatterns.creation.factory;
+
+import com.proyecto.inpatterns.creation.util.Producto;
 
 /**
  *
  * @author DELL
  */
-public enum FoodTypeEnum {
-    ASIAN,CHINNESE,GREEK,INDIAN,ITALIAN,MEXICAN,MEDITERRANEO;
+public interface ProductFactory {
+    Producto getProducto(ProductType tipo);
 }

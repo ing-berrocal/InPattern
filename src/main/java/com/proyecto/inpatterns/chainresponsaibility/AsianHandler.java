@@ -23,6 +23,8 @@ public class AsianHandler implements FoodRequestHandler{
         if(FoodTypeEnum.ASIAN == food){
             System.out.println("Asiatica!!");
         }else{
+            if(foodNextRequestHandler == null) 
+                throw new RuntimeException("No existe un siguiente elemento");
             this.foodNextRequestHandler.processRequestHandler(food);
         }
     }
