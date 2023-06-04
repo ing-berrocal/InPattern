@@ -41,6 +41,7 @@ public class CreationConnectionSQL {
                     this.password);
             connection.setAutoCommit(false);
             System.out.println("Opened database successfully");
+            isConnected = Boolean.TRUE;
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(1);

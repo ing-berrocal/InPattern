@@ -28,7 +28,7 @@ public class ConnectionSQLFactory {
      * @param password
      * @return
      */
-    public CreationConnectionSQL getConnectionSQL(
+    public static CreationConnectionSQL getConnectionSQL(
             SQLTypes type,
             String url,
             String username,

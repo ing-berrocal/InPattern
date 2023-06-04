@@ -11,6 +11,6 @@ package com.proyecto.inpatterns.creation.factory;
 public class CreationConnectionSQLPostgres extends CreationConnectionSQL{
 
     public CreationConnectionSQLPostgres(String jdbcUrl, String username, String password) {
-        super(jdbcUrl, username, password,"");
+        super(jdbcUrl, username, password,"org.postgresql.Driver");
     }        
 }
