@@ -10,7 +10,7 @@ package com.proyecto.inpatterns.creation.factory;
  */
 public class ConnectionSQLFactory {
 
-    enum SQLTypes{
+    public enum SQLTypes{
         SQLLite,
         Postgres,
         MySql,
@@ -36,9 +36,9 @@ public class ConnectionSQLFactory {
             ){
         
         return switch (type) {
-            case SQLLite -> new CreationConnectionSQLSQLite(url, username, password);                
-            case Postgres -> new CreationConnectionSQLPostgres(url, username, password);                
-            case MySql -> new CreationConnectionSQLMySQL(url, username, password);                
+            case SQLLite ->     new CreationConnectionSQL(url, username, password,"com.mysql.cj.jdbc.Driver");
+            case Postgres ->    new CreationConnectionSQL(url, username, password,"org.postgresql.Driver");
+            case MySql ->       new CreationConnectionSQL(url, username, password,"com.mysql.cj.jdbc.Driver");              
             default -> throw new AssertionError();
         };
     }

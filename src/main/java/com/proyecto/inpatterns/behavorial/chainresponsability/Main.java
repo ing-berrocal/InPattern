@@ -3,29 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.proyecto.inpatterns.chainresponsaibility;
+package com.proyecto.inpatterns.behavorial.chainresponsability;
+
+import com.proyecto.inpatterns.behavorial.chainresponsability.util.FoodRequestHandler;
+import com.proyecto.inpatterns.behavorial.chainresponsability.util.FoodTypeEnum;
 
 /**
  *
  * @author DELL
  */
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         FoodRequestHandler asian = new AsianHandler();
         FoodRequestHandler chinnese = new ChinneseHandler();
         FoodRequestHandler greek = new GreekFoodHandler();
         FoodRequestHandler indian = new IndianFoodHandler();
-        FoodRequestHandler  italian = new ItalianFoodHandler();
+        FoodRequestHandler italian = new ItalianFoodHandler();
         FoodRequestHandler mexican = new MexicanFoodHandler();
-        
+
         asian.setNextRequestHandler(chinnese);
         chinnese.setNextRequestHandler(greek);
         greek.setNextRequestHandler(indian);
         indian.setNextRequestHandler(italian);
         italian.setNextRequestHandler(mexican);
-        //mexican.setNextRequestHandler(asian);
-        
-        
+        // mexican.setNextRequestHandler(asian);
+
         chinnese.processRequestHandler(FoodTypeEnum.MEDITERRANEO);
     }
 }

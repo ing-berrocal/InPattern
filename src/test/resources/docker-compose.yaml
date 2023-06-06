@@ -1,13 +1,13 @@
 version: "3.9"
 services:
-  local-redis:
+  test-redis:
     image: redis:latest
     container_name: rds
     ports:
       - "6379:6379"
     networks:
       infra-test:
-  local-postgres:
+  test-postgres:
     image: postgres:latest
     container_name: pg-local
     ports:
@@ -18,7 +18,7 @@ services:
       POSTGRES_DB: dbtest
     networks:
       infra-test:
-  local-mysql:
+  test-mysql:
     image: mysql:latest
     container_name: mysql-local
     ports:

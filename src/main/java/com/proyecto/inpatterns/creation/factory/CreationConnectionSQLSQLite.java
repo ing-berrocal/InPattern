@@ -13,8 +13,4 @@ public class CreationConnectionSQLSQLite extends CreationConnectionSQL{
     public CreationConnectionSQLSQLite(String jdbcUrl, String username, String password) {
         super(jdbcUrl, username, password,"");
     }
-        
-    public boolean isConnected(){
-        return Boolean.FALSE;
-    } 
 }

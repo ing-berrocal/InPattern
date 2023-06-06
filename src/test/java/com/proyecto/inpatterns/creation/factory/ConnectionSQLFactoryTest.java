@@ -10,28 +10,23 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
-/**
- *
- * @author DELL
- */
 public class ConnectionSQLFactoryTest {
-    
-    CreationConnectionSQL result;
-    
+
+    private CreationConnectionSQL connectionSQL;
+
     @BeforeAll
     public static void setUpClass() {
     }
-    
+
     @AfterAll
     public static void tearDownClass() {
     }
-    
+
     @BeforeEach
     public void setUp() {
     }
-    
+
     @AfterEach
     public void tearDown() {
     }
@@ -41,19 +36,44 @@ public class ConnectionSQLFactoryTest {
      */
     @Test
     public void testGetConnectionPostgres() {
-        
+
         String url = "jdbc:postgresql://192.168.1.23:5432/postgres";
         String username = "postgres";
         String password = "password";
 
+        // ConnectionSQLFactory.SQLTypes type = ConnectionSQLFactory.SQLTypes.Postgres;
+        // CreationConnectionSQL result = ConnectionSQLFactory.getConnectionSQL(type,
+        // url, username, password);
+
         ConnectionSQLFactory.SQLTypes type = ConnectionSQLFactory.SQLTypes.Postgres;
-        CreationConnectionSQL result = ConnectionSQLFactory.getConnectionSQL(type, url, username, password);
-        
-        result.connect();
-    
-        Assertions.assertTrue(result.isConnected());
-        
-        result.close();
+        // (type, url, username, password);
+        connectionSQL = ConnectionSQLFactory.getConnectionSQL(type, url, username, password);
+
+        connectionSQL.connect();
+
+        Assertions.assertTrue(connectionSQL.isConnected());
+
+        connectionSQL.close();
     }
-    
+
+    /**
+     * Test of getConnectionSQL method, of class ConnectionSQLFactory.
+     */
+    @Test
+    public void testGetConnectionMySql() {
+
+        String url = "jdbc:mysql://192.168.1.23:3306/dbtest";
+        String username = "root";
+        String password = "password";
+
+        ConnectionSQLFactory.SQLTypes type = ConnectionSQLFactory.SQLTypes.MySql;
+        connectionSQL = ConnectionSQLFactory.getConnectionSQL(type, url, username, password);
+
+        connectionSQL.connect();
+
+        Assertions.assertTrue(connectionSQL.isConnected());
+
+        connectionSQL.close();
+    }
+
 }

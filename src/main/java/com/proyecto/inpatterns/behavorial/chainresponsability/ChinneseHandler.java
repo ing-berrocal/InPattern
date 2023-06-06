@@ -3,16 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.proyecto.inpatterns.chainresponsaibility;
+package com.proyecto.inpatterns.behavorial.chainresponsability;
+
+import com.proyecto.inpatterns.behavorial.chainresponsability.util.FoodRequestHandler;
+import com.proyecto.inpatterns.behavorial.chainresponsability.util.FoodTypeEnum;
 
 /**
  *
  * @author DELL
  */
-public class AsianHandler implements FoodRequestHandler{
+public class ChinneseHandler implements FoodRequestHandler {
 
     private FoodRequestHandler foodNextRequestHandler;
-    
+
     @Override
     public void setNextRequestHandler(FoodRequestHandler requestHandler) {
         this.foodNextRequestHandler = requestHandler;
@@ -20,13 +23,11 @@ public class AsianHandler implements FoodRequestHandler{
 
     @Override
     public void processRequestHandler(FoodTypeEnum food) {
-        if(FoodTypeEnum.ASIAN == food){
-            System.out.println("Asiatica!!");
-        }else{
-            if(foodNextRequestHandler == null) 
-                throw new RuntimeException("No existe un siguiente elemento");
+        if (FoodTypeEnum.CHINNESE == food) {
+            System.out.println("China!!");
+        } else {
             this.foodNextRequestHandler.processRequestHandler(food);
         }
     }
-    
+
 }

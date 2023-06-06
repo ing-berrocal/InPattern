@@ -10,11 +10,7 @@ package com.proyecto.inpatterns.creation.factory;
  */
 public class CreationConnectionSQLMySQL extends CreationConnectionSQL{
 
-    public CreationConnectionSQLMySQL(String jdbcUrl, String username, String password) {
-        super(jdbcUrl, username, password,"");
+    private CreationConnectionSQLMySQL(String jdbcUrl, String username, String password) {
+        super(jdbcUrl, username, password,"com.mysql.cj.jdbc.Driver");
     }
-        
-    public boolean isConnected(){
-        return Boolean.FALSE;
-    } 
 }
